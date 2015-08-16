@@ -9,7 +9,7 @@ import (
     "../test/memo"
     "../test/diff"
     "fmt"
-    "reflect"
+    _ "reflect"
 )
 
 func main() {
