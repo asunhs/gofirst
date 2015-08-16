@@ -11,6 +11,7 @@ type Person struct {
 
 type Self interface {
     Hello()
+    Bye()
 }
 
 func (p *Person) Hello() {
@@ -19,6 +20,11 @@ func (p *Person) Hello() {
     } else {
         fmt.Println("Hello", p.name)
     }
+}
+
+func (p Person) Bye() {
+    // p 는 nil 과 비교가 불가능
+    fmt.Println("Bye", p.name)
 }
 
 func getNilPerson() *Person {
@@ -32,6 +38,9 @@ func getSun() *Person {
 func main() {
     var s Self
     var t Self
+    var p Person
+    k := Person{"Kim"}
+    l := &Person{"Lee"}
 
     // 포인터 타입도 함수 확장이 가능하다!
     // 포인터 타입도 덕타이핑이 가능하다!
@@ -43,7 +52,24 @@ func main() {
 
     s.Hello()
     t.Hello()
+    p.Hello()
+    k.Hello()
+    l.Hello()
+
+    fmt.Println("========================================")
+
+    s.Bye()
+    // t.Bye() // 에러남
+    p.Bye()
+    k.Bye()
+    l.Bye()
+
+    fmt.Println("========================================")
 
     fmt.Println("nil type", reflect.TypeOf(nil))
     fmt.Println("s type", reflect.TypeOf(s))
+    fmt.Println("t type", reflect.TypeOf(t))
+    fmt.Println("p type", reflect.TypeOf(p))
+    fmt.Println("k type", reflect.TypeOf(k))
+    fmt.Println("l type", reflect.TypeOf(l))
 }
