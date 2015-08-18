@@ -1,0 +1,22 @@
+MSA 연구회 (최효근 책임님)
+Open iT 5회 발족
+* Micro Service Ach
+* Web Scalable
+
+
+
+
+주제
+- parse.com
+- self null check
+- value & reference
+- go 와 모바일
+
+
+
+
+본론
+- reflect
+- dynamic
+- package
+- file
